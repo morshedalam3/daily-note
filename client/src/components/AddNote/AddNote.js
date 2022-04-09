@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Button, TextField } from "@material-ui/core";
 import FileBase from "react-file-base64";
-import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import { useDispatch, useSelector } from "react-redux";
 import { createPost, updatePost } from "../../action/posts";
 import "./AddNote.css";
@@ -13,7 +12,6 @@ const AddNote = ({ currentId, setCurrentId }) => {
     selectedFile: "",
   });
 
-  const [error] = useState(false);
   const post = useSelector((state) =>
     currentId ? state.posts.find((message) => message._id === currentId) : null
   );
@@ -42,7 +40,6 @@ const AddNote = ({ currentId, setCurrentId }) => {
           {currentId ? `Editing "${post.title}"` : "Creating a Note"}
         </span>
         <div className="settings__select">
-          {error && <ErrorMessage>Please Fill all the feilds</ErrorMessage>}
           <TextField
             style={{ marginBottom: 25 }}
             name="title"
