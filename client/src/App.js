@@ -19,7 +19,7 @@ function App() {
     <div>
       <AppBar className={classes.appBar} position="static" color="inherit">
         <Typography className={classes.heading} variant="h2" align="center">
-          Memories
+          Daily-Note
         </Typography>
       </AppBar>
       <AddNote currentId={currentId} setCurrentId={setCurrentId} />
@@ -33,7 +33,7 @@ function App() {
               alignItems="stretch"
               spacing={3}
             >
-              <Grid item xs={12} sm={7}>
+              <Grid item xs={12} sm={12}>
                 <Posts setCurrentId={setCurrentId} />
               </Grid>
             </Grid>
